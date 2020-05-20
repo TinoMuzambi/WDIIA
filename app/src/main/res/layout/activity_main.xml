@@ -16,20 +16,10 @@
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextureView
-            android:id="@+id/devotionalView"
-            android:layout_width="0dp"
-            android:layout_height="239dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="128dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/dishesText"
@@ -39,18 +29,6 @@
             android:layout_marginTop="8dp"
             android:text="Dishes"
             app:layout_constraintStart_toStartOf="@+id/dishesView"
-            app:layout_constraintTop_toTopOf="@+id/dishesView" />
-
-        <TextureView
-            android:id="@+id/dishesView"
-            android:layout_width="0dp"
-            android:layout_height="239dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -60,8 +38,31 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Devotions"
-            app:layout_constraintStart_toStartOf="@+id/devotionalView"
-            app:layout_constraintTop_toTopOf="@+id/devotionalView" />
+            app:layout_constraintStart_toStartOf="@+id/devotionsView"
+            app:layout_constraintTop_toTopOf="@+id/devotionsView" />
+
+        <View
+            android:id="@+id/dishesView"
+            android:layout_width="0dp"
+            android:layout_height="167dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/devotionsView"
+            android:layout_width="0dp"
+            android:layout_height="167dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dishesView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

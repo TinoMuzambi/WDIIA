@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#009688"
+    android:background="#B2DFDB"
     tools:context=".MainActivity">
 
     <TextView
@@ -21,13 +21,13 @@
     <View
         android:id="@+id/devotionsView"
         android:layout_width="0dp"
-        android:layout_height="167dp"
+        android:layout_height="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="150dp"
-        android:background="#FFC107"
-        android:backgroundTint="#FFC107"
+        android:background="#F0F4C3"
+        android:backgroundTint="#F0F4C3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,18 +41,19 @@
         android:layout_marginTop="8dp"
         android:text="@string/devotions"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/devotionsView"
         app:layout_constraintTop_toTopOf="@+id/devotionsView" />
 
     <View
         android:id="@+id/dishesView"
         android:layout_width="0dp"
-        android:layout_height="167dp"
+        android:layout_height="200dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
-        android:background="#3F51B5"
-        android:backgroundTint="#3F51B5"
+        android:background="#B3E5FC"
+        android:backgroundTint="#B3E5FC"
         android:backgroundTintMode="src_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +67,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/dishes"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/dishesView"
         app:layout_constraintTop_toTopOf="@+id/dishesView" />
 

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val dateText = findViewById<TextView>(R.id.dateTextView)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val current = LocalDateTime.now()
+            val current = LocalDate.now()
 
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+            val formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
             val formatted = current.format(formatter)
             dateText.text = formatted
         } else {
@@ -58,14 +59,14 @@ class MainActivity : AppCompatActivity() {
             updateDuties()
         }
         else {
-            val dishesTextView = findViewById<TextView>(R.id.dishesText)
-            var out = "Dishes:\n" + "Washing - " + dishes[0] + "\nRinsing - " +
+            val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
+            var out = "Washing - " + dishes[0] + "\nRinsing - " +
                     dishes[1] + "\nDrying - " + dishes[2]
-            dishesTextView.text = out
+            dishesContentTextViewView.text = out
 
-            val devotionalTextView = findViewById<TextView>(R.id.devotionalText)
-            out = "Devotions:\n" + "Today it's " + devotionals[0]
-            devotionalTextView.text = out
+            val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
+            out = "Today it's " + devotionals[0]
+            devotionsContentTextViewView.text = out
         }
     }
 
@@ -75,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDate.now()
 
-            val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
             val formatted = current.format(formatter)
             dateText.text = formatted
         } else {
@@ -95,14 +96,14 @@ class MainActivity : AppCompatActivity() {
             updateDuties()
         }
         else {
-            val dishesTextView = findViewById<TextView>(R.id.dishesText)
-            var out = "Dishes:\n" + "Washing - " + dishes[0] + "\nRinsing - " +
+            val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
+            var out = "Washing - " + dishes[0] + "\nRinsing - " +
                     dishes[1] + "\nDrying - " + dishes[2]
-            dishesTextView.text = out
+            dishesContentTextViewView.text = out
 
-            val devotionalTextView = findViewById<TextView>(R.id.devotionalText)
-            out = "Devotions:\n" + "Today it's " + devotionals[0]
-            devotionalTextView.text = out
+            val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
+            out = "Today it's " + devotionals[0]
+            devotionsContentTextViewView.text = out
         }
     }
 
@@ -111,10 +112,10 @@ class MainActivity : AppCompatActivity() {
         dishes[2] = dishes[1]
         dishes[1] = dishes[0]
         dishes[0] = temp
-        val dishesTextView = findViewById<TextView>(R.id.dishesText)
-        var out = "Dishes:\n" + "Washing - " + dishes[0] + "\nRinsing - " +
+        val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
+        var out = "Washing - " + dishes[0] + "\nRinsing - " +
                 dishes[1] + "\nDrying - " + dishes[2]
-        dishesTextView.text = out
+        dishesContentTextViewView.text = out
 
         val settings = getSharedPreferences("PREFS", 0)
         val editor = settings.edit()
@@ -131,9 +132,9 @@ class MainActivity : AppCompatActivity() {
         devotionals[1] = devotionals[0]
         devotionals[0] = temp
 
-        val devotionalTextView = findViewById<TextView>(R.id.devotionalText)
-        out = "Devotions:\n" + "Today it's " + devotionals[0]
-        devotionalTextView.text = out
+        val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
+        out = "Today it's " + devotionals[0]
+        devotionsContentTextViewView.text = out
 
         editor.putString("p1", devotionals[0])
         editor.putString("p2", devotionals[1])

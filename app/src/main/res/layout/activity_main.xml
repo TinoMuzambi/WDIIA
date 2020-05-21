@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Date"
+        android:text="@string/date"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,18 +26,20 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="150dp"
+        android:background="#FFC107"
+        android:backgroundTint="#FFC107"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dishesView" />
 
     <TextView
-        android:id="@+id/devotionalText"
+        android:id="@+id/devotionalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Devotions"
+        android:text="@string/devotions"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@+id/devotionsView"
         app:layout_constraintTop_toTopOf="@+id/devotionsView" />
@@ -48,19 +51,44 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
+        android:background="#3F51B5"
+        android:backgroundTint="#3F51B5"
+        android:backgroundTintMode="src_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
 
     <TextView
-        android:id="@+id/dishesText"
+        android:id="@+id/dishesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Dishes"
+        android:text="@string/dishes"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="@+id/dishesView"
         app:layout_constraintTop_toTopOf="@+id/dishesView" />
+
+    <TextView
+        android:id="@+id/dishesContentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/dishes_duties"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/dishesView"
+        app:layout_constraintTop_toBottomOf="@+id/dishesTextView" />
+
+    <TextView
+        android:id="@+id/devotionsContentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/devotions_content"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/devotionsView"
+        app:layout_constraintTop_toBottomOf="@+id/devotionalTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

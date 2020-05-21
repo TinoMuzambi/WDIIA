@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Whose Duty Is It Anyway</string>
+    <string name="devotions">Devotions:</string>
+    <string name="date">Date</string>
+    <string name="dishes_duties">Dishes Duties</string>
+    <string name="devotions_content">Devotions Content</string>
+    <string name="dishes">Dishes:</string>
 </resources>

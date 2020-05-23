@@ -124,12 +124,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        temp = devotionals[4]
-        devotionals[4] = devotionals[3]
-        devotionals[3] = devotionals[2]
-        devotionals[2] = devotionals[1]
-        devotionals[1] = devotionals[0]
-        devotionals[0] = temp
+        temp = devotionals[0]
+        devotionals[0] = devotionals[1]
+        devotionals[1] = devotionals[2]
+        devotionals[2] = devotionals[3]
+        devotionals[3] = devotionals[4]
+        devotionals[4] = temp
 
         val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
         out = "Today it's " + devotionals[0]

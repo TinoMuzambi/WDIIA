@@ -5,15 +5,14 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.time.LocalDate
-import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    var dishes = arrayOf("Tino", "Eugene", "David")
-    var devotionals = arrayOf("Dad", "Mom", "Tino", "Eugene", "David")
+    private var dishes = arrayOf("Tino", "Eugene", "David")
+    private var devotionals = arrayOf("Dad", "Mom", "Tino", "Eugene", "David")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             val formatted = current.format(formatter)
             dateText.text = formatted
         } else {
-            dateText.text = "It's a beautiful day!"
+            dateText.text = getString(R.string.beatiful_day)
         }
 
 
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             val formatted = current.format(formatter)
             dateText.text = formatted
         } else {
-            dateText.text = "It's a beautiful day!"
+            dateText.text = getString(R.string.beatiful_day)
         }
 
         val settings = getSharedPreferences("PREFS", 0)
@@ -107,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun updateDuties() {
+    private fun updateDuties() {
         var temp = dishes[2]
         dishes[2] = dishes[1]
         dishes[1] = dishes[0]

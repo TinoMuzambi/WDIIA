@@ -7,12 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecylerAdapter(_washing: String?, _rinsing: String?, _drying: String?) :
+class RecylerAdapter(dishes : List<String>) :
     RecyclerView.Adapter<RecylerAdapter.ViewHolder>() {
 
-    var washing = _washing
-    var rinsing = _rinsing
-    var drying = _drying
+    var washing = dishes[0]
+    var rinsing = dishes[1]
+    var drying = dishes[2]
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

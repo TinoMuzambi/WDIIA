@@ -122,8 +122,6 @@ class MainActivity : AppCompatActivity() {
         editor.putString("rinse", dishes[1])
         editor.putString("dry", dishes[2])
 
-
-
         temp = devotionals[0]
         devotionals[0] = devotionals[1]
         devotionals[1] = devotionals[2]
@@ -142,6 +140,5 @@ class MainActivity : AppCompatActivity() {
         editor.putString("p5", devotionals[4])
 
         editor.commit()
-        
     }
 }

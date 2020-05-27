@@ -7,14 +7,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecylerAdapter :
+class RecylerAdapter(_washing: String?, _rinsing: String?, _drying: String?) :
     RecyclerView.Adapter<RecylerAdapter.ViewHolder>() {
+
+    var washing = _washing
+    var rinsing = _rinsing
+    var drying = _drying
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view: View = layoutInflater.inflate(R.layout.row_item, parent, false)
+
         return ViewHolder(view)
     }
 
@@ -22,6 +27,11 @@ class RecylerAdapter :
         holder: ViewHolder,
         position: Int
     ) {
+        holder.rowCountTextView.text = (position + 1).toString()
+
+        val dishes = arrayOf(washing.toString(), rinsing.toString(), drying.toString())
+
+        holder.textView.text = dishes[position]
     }
 
     override fun getItemCount(): Int {

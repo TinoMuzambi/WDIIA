@@ -12,6 +12,11 @@ class EditDishes : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_dishes)
 
+        val extras = intent.extras
+        val washing = extras?.getString("washing")
+        val rinsing = extras?.getString("rinsing")
+        val drying = extras?.getString("drying")
+
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
@@ -21,7 +26,7 @@ class EditDishes : AppCompatActivity() {
         window.setLayout((width * 0.8).toInt(), (height * 0.8).toInt())
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        val recylerAdapter = RecylerAdapter()
+        val recylerAdapter = RecylerAdapter(washing, rinsing, drying)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 

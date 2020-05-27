@@ -21,10 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val dateText = findViewById<TextView>(R.id.dateTextView)
         val editDishesButton = findViewById<Button>(R.id.btnDishesEdit)
-        editDishesButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, EditDishes::class.java)
-            startActivity(intent)
-        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDate.now()
@@ -74,6 +70,14 @@ class MainActivity : AppCompatActivity() {
             val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
             out = "Today it's " + devotionals[0]
             devotionsContentTextViewView.text = out
+        }
+
+        editDishesButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, EditDishes::class.java)
+            intent.putExtra("washing", washing)
+            intent.putExtra("rinsing", rinsing)
+            intent.putExtra("drying", drying)
+            startActivity(intent)
         }
     }
 

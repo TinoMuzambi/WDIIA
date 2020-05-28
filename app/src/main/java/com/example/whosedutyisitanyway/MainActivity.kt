@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val dateText = findViewById<TextView>(R.id.dateTextView)
         val editDishesButton = findViewById<Button>(R.id.btnDishesEdit)
+        val editDevotionsButton = findViewById<Button>(R.id.btnDevotionsEdit)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDate.now()
@@ -78,6 +79,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, EditDishes::class.java)
             startActivity(intent)
         }
+        editDevotionsButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, EditDevotions::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
@@ -126,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         val drying = settings.getString("dry", "Tino")
 
         val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
-        var out = "Washing - " + washing + "\nRinsing - " +
+        val out = "Washing - " + washing + "\nRinsing - " +
                 rinsing + "\nDrying - " + drying
         dishesContentTextViewView.text = out
     }

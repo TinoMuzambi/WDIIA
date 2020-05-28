@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 class RecylerAdapter(dishes : List<String>) :
     RecyclerView.Adapter<RecylerAdapter.ViewHolder>() {
 
-    var washing = dishes[0]
-    var rinsing = dishes[1]
-    var drying = dishes[2]
+    private var washing = dishes[0]
+    private var rinsing = dishes[1]
+    private var drying = dishes[2]
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -32,6 +32,15 @@ class RecylerAdapter(dishes : List<String>) :
         val dishes = arrayOf(washing, rinsing, drying)
 
         holder.textView.text = dishes[position]
+        if (dishes[position] == "Tino") {
+            holder.imageView.setImageResource(R.mipmap.tino)
+        }
+        else if (dishes[position] == "Eugene") {
+            holder.imageView.setImageResource(R.mipmap.eugene)
+        }
+        else if (dishes[position] == "David") {
+            holder.imageView.setImageResource(R.mipmap.david)
+        }
     }
 
     override fun getItemCount(): Int {

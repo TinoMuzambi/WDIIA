@@ -85,6 +85,30 @@ class EditDevotions : AppCompatActivity() {
                 p3 = recyclerView[toPosition].textView.text.toString()
                 recyclerView[toPosition].rowCountTextView.text = 3.toString()
             }
+            else if (fromPosition == 2 && toPosition == 3) {
+                p3 = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 3.toString()
+                p4 = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 4.toString()
+            }
+            else if (fromPosition == 3 && toPosition == 2) {
+                p3 = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 3.toString()
+                p4 = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 4.toString()
+            }
+            else if (fromPosition == 3 && toPosition == 4) {
+                p4 = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 4.toString()
+                p5 = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 5.toString()
+            }
+            else if (fromPosition == 4 && toPosition == 3) {
+                p4 = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 4.toString()
+                p5 = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 5.toString()
+            }
 
             val editor = settings.edit()
             editor.putString("p1", p1)

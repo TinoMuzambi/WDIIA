@@ -1,16 +1,13 @@
 package com.example.whosedutyisitanyway
 
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log.d
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_item.view.*
-import java.util.*
 
 class EditDishes : AppCompatActivity() {
 
@@ -45,7 +42,7 @@ class EditDishes : AppCompatActivity() {
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
-    val simpleCallback = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END, 0) {
+    private val simpleCallback = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END, 0) {
         override fun onMove(
             recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,
@@ -62,23 +59,31 @@ class EditDishes : AppCompatActivity() {
             recyclerView.adapter?.notifyItemMoved(fromPosition, toPosition)
             if (fromPosition == 0 && toPosition == 1) {
                 washing = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 1.toString()
                 rinsing = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[2].textView.text.toString()
             }
             else if (fromPosition == 1 && toPosition == 2) {
                 washing = recyclerView[0].textView.text.toString()
                 rinsing = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 3.toString()
             }
             else if (fromPosition == 1 && toPosition == 0) {
                 washing = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 1.toString()
                 rinsing = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[2].textView.text.toString()
             }
             else if (fromPosition == 2 && toPosition == 1) {
                 washing = recyclerView[0].textView.text.toString()
                 rinsing = recyclerView[fromPosition].textView.text.toString()
+                recyclerView[fromPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[toPosition].textView.text.toString()
+                recyclerView[toPosition].rowCountTextView.text = 3.toString()
             }
 
             val editor = settings.edit()
@@ -89,9 +94,7 @@ class EditDishes : AppCompatActivity() {
             return false
         }
 
-        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-            TODO("Not yet implemented")
-        }
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {}
 
     }
 }

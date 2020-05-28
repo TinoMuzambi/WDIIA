@@ -1,4 +1,4 @@
-package com.example.whosedutyisitanyway
+package com.tinomuzambi.whosedutyisitanyway
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

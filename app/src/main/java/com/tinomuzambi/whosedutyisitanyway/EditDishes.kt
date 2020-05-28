@@ -1,4 +1,4 @@
-package com.example.whosedutyisitanyway
+package com.tinomuzambi.whosedutyisitanyway
 
 import android.os.Bundle
 import android.util.DisplayMetrics

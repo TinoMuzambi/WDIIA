@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.whosedutyisitanyway">
+    package="com.tinomuzambi.whosedutyisitanyway">
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".EditDevotions"
+            android:name="com.tinomuzambi.whosedutyisitanyway.EditDevotions"
             android:theme="@style/AppTheme.Popup" />
         <activity
-            android:name=".EditDishes"
+            android:name="com.tinomuzambi.whosedutyisitanyway.EditDishes"
             android:theme="@style/AppTheme.Popup" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.tinomuzambi.whosedutyisitanyway.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

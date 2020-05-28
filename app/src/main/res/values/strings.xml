@@ -8,4 +8,6 @@
     <string name="beatiful_day">It\'s a beautiful day!</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
+    <string name="dishes_order">Edit Dishes Order</string>
+    <string name="dev_order">Edit Devotions Order</string>
 </resources>

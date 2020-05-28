@@ -14,6 +14,7 @@ class EditDevotions : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_devotions)
+        setTitle(getString(R.string.dev_order))
 
         val settings = getSharedPreferences("PREFS", 0)
 

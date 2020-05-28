@@ -138,9 +138,8 @@ class MainActivity : AppCompatActivity() {
         val currPerson = settings.getString("p1", "Dad")
 
         val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
-        out = "Today it's " + currPerson
+        out = "Today it's $currPerson"
         devotionsContentTextViewView.text = out
-        val person5 = settings.getString("p5", "David")
     }
 
     private fun updateDuties() {

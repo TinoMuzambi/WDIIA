@@ -15,6 +15,7 @@ class EditDishes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_dishes)
+        setTitle(getString(R.string.dishes_order))
 
         val settings = getSharedPreferences("PREFS", 0)
 

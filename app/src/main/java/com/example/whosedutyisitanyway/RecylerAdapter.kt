@@ -29,7 +29,7 @@ class RecylerAdapter(dishes : List<String>) :
     ) {
         holder.rowCountTextView.text = (position + 1).toString()
 
-        val dishes = arrayOf(washing.toString(), rinsing.toString(), drying.toString())
+        val dishes = arrayOf(washing, rinsing, drying)
 
         holder.textView.text = dishes[position]
     }

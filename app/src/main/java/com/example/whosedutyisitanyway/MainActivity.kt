@@ -72,17 +72,16 @@ class MainActivity : AppCompatActivity() {
             devotionsContentTextViewView.text = out
         }
 
+        refreshDuties()
+
         editDishesButton.setOnClickListener {
             val intent = Intent(this@MainActivity, EditDishes::class.java)
-            intent.putExtra("washing", washing)
-            intent.putExtra("rinsing", rinsing)
-            intent.putExtra("drying", drying)
             startActivity(intent)
         }
     }
 
-    override fun onRestart() {
-        super.onRestart()
+    override fun onResume() {
+        super.onResume()
         val dateText = findViewById<TextView>(R.id.dateTextView)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDate.now()
@@ -116,6 +115,20 @@ class MainActivity : AppCompatActivity() {
             out = "Today it's " + devotionals[0]
             devotionsContentTextViewView.text = out
         }
+        refreshDuties()
+    }
+
+    private fun refreshDuties() {
+        val settings = getSharedPreferences("PREFS", 0)
+
+        val washing = settings.getString("wash", "David")
+        val rinsing = settings.getString("rinse", "Eugene")
+        val drying = settings.getString("dry", "Tino")
+
+        val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
+        var out = "Washing - " + washing + "\nRinsing - " +
+                rinsing + "\nDrying - " + drying
+        dishesContentTextViewView.text = out
     }
 
     private fun updateDuties() {

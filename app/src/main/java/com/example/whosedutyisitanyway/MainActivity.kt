@@ -131,9 +131,16 @@ class MainActivity : AppCompatActivity() {
         val drying = settings.getString("dry", "Tino")
 
         val dishesContentTextViewView = findViewById<TextView>(R.id.dishesContentTextView)
-        val out = "Washing - " + washing + "\nRinsing - " +
+        var out = "Washing - " + washing + "\nRinsing - " +
                 rinsing + "\nDrying - " + drying
         dishesContentTextViewView.text = out
+
+        val currPerson = settings.getString("p1", "Dad")
+
+        val devotionsContentTextViewView = findViewById<TextView>(R.id.devotionsContentTextView)
+        out = "Today it's " + currPerson
+        devotionsContentTextViewView.text = out
+        val person5 = settings.getString("p5", "David")
     }
 
     private fun updateDuties() {

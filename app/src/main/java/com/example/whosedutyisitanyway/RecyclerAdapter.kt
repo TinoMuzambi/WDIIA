@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecylerAdapter(dishes : List<String>) :
-    RecyclerView.Adapter<RecylerAdapter.ViewHolder>() {
+class RecyclerAdapter(dishes : List<String>) :
+    RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private var washing = dishes[0]
     private var rinsing = dishes[1]
@@ -32,14 +32,17 @@ class RecylerAdapter(dishes : List<String>) :
         val dishes = arrayOf(washing, rinsing, drying)
 
         holder.textView.text = dishes[position]
-        if (dishes[position] == "Tino") {
-            holder.imageView.setImageResource(R.mipmap.tino)
-        }
-        else if (dishes[position] == "Eugene") {
-            holder.imageView.setImageResource(R.mipmap.eugene)
-        }
-        else if (dishes[position] == "David") {
-            holder.imageView.setImageResource(R.mipmap.david)
+
+        when {
+            dishes[position] == "Tino" -> {
+                holder.imageView.setImageResource(R.mipmap.tino)
+            }
+            dishes[position] == "Eugene" -> {
+                holder.imageView.setImageResource(R.mipmap.eugene)
+            }
+            dishes[position] == "David" -> {
+                holder.imageView.setImageResource(R.mipmap.david)
+            }
         }
     }
 
@@ -49,14 +52,9 @@ class RecylerAdapter(dishes : List<String>) :
 
     inner class ViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-        var imageView: ImageView
-        var textView: TextView
-        var rowCountTextView: TextView
+        var imageView: ImageView = itemView.findViewById(R.id.imageView)
+        var textView: TextView = itemView.findViewById(R.id.textView)
+        var rowCountTextView: TextView = itemView.findViewById(R.id.rowCountTextView)
 
-        init {
-            imageView = itemView.findViewById(R.id.imageView)
-            textView = itemView.findViewById(R.id.textView)
-            rowCountTextView = itemView.findViewById(R.id.rowCountTextView)
-        }
     }
 }

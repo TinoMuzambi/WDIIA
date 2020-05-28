@@ -32,7 +32,7 @@ class EditDishes : AppCompatActivity() {
         window.setLayout((width * 0.8).toInt(), (height * 0.5).toInt())
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        val recylerAdapter = RecylerAdapter(dishes)
+        val recylerAdapter = RecyclerAdapter(dishes)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -62,10 +62,8 @@ class EditDishes : AppCompatActivity() {
                 recyclerView[toPosition].rowCountTextView.text = 1.toString()
                 rinsing = recyclerView[fromPosition].textView.text.toString()
                 recyclerView[fromPosition].rowCountTextView.text = 2.toString()
-                drying = recyclerView[2].textView.text.toString()
             }
             else if (fromPosition == 1 && toPosition == 2) {
-                washing = recyclerView[0].textView.text.toString()
                 rinsing = recyclerView[toPosition].textView.text.toString()
                 recyclerView[toPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[fromPosition].textView.text.toString()
@@ -76,10 +74,8 @@ class EditDishes : AppCompatActivity() {
                 recyclerView[fromPosition].rowCountTextView.text = 1.toString()
                 rinsing = recyclerView[toPosition].textView.text.toString()
                 recyclerView[toPosition].rowCountTextView.text = 2.toString()
-                drying = recyclerView[2].textView.text.toString()
             }
             else if (fromPosition == 2 && toPosition == 1) {
-                washing = recyclerView[0].textView.text.toString()
                 rinsing = recyclerView[fromPosition].textView.text.toString()
                 recyclerView[fromPosition].rowCountTextView.text = 2.toString()
                 drying = recyclerView[toPosition].textView.text.toString()
@@ -91,6 +87,7 @@ class EditDishes : AppCompatActivity() {
             editor.putString("rinse", rinsing)
             editor.putString("dry", drying)
             editor.commit()
+
             return false
         }
 
